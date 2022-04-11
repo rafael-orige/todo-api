@@ -10,13 +10,7 @@ dotenv.config();
 
 const server = express();
 
-const corsOptions = {
-    origin: "*",
-    credentials: true,
-    optionSucessStatus: 200
-}
-
-server.use(cors(corsOptions));
+server.use(cors());
 
 server.use(express.static(path.join(__dirname, '../public')));
 server.use(express.urlencoded({ extended: true }));
